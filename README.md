@@ -1,43 +1,41 @@
-# GuestSync Dashboard — Starter (Next.js + Tailwind)
+# GuestSync Dashboard (Firebase-ready)
 
-This is a clean, data-dense management dashboard (Next.js + Tailwind) with mock data to deploy on Vercel.
+This project is a minimal Next.js + Tailwind dashboard wired to Firebase Firestore for real-time tasks.
 
-## What this archive contains
-- A minimal Next.js project (pages router)
+## What is included
+- Next.js pages-based app
 - Tailwind CSS configured
-- Components: Header, Sidebar, RequestTable (data-dense view)
-- Mock data in `pages/index.js`
+- Firebase initialization with Firestore (real-time listeners)
+- `Tasks` component that listens to the `tasks` collection
+- Instructions for running locally, uploading to GitHub, and deploying to Vercel
 
-## Quick steps to get this live (recommended — easiest)
-1. **Unzip** this archive locally.
-2. Open a terminal in the unzipped folder.
-3. Run:
+## Quick Start (locally)
+1. Unzip the project and open a terminal at the project root.
+2. Install dependencies:
    ```bash
    npm install
+   ```
+3. Start dev server:
+   ```bash
    npm run dev
    ```
-   Then open http://localhost:3000 to preview.
-4. **To deploy on Vercel (one-click):**
-   - Create a GitHub account (if you don't have one) at https://github.com.
-   - Create a new repository on GitHub (empty).
-   - Push this project to that repo (instructions below), OR upload the files via the GitHub website.
-   - On Vercel (https://vercel.com), click **New Project** → Import Git Repository → select your new repo → Deploy.
+4. Open http://localhost:3000
 
-## Push to GitHub using Git (optional, recommended)
-From the project root:
-```bash
-git init
-git add .
-git commit -m "Initial GuestSync dashboard"
-# create repo on GitHub (via website) and copy the repo URL, then:
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-```
+## Firebase setup (already included)
+The `firebase.js` file is pre-filled with your Firebase config for project `guest-21009`.
 
-## Notes
-- You will need Node.js (16.x or later) and npm installed locally to run `npm install`.
-- Vercel will automatically build the app when you import the GitHub repo.
-- This starter uses mock data — we can add a database and authentication next.
+## Firestore collection structure
+Create a collection named `tasks`. Documents should contain fields (example):
+- title (string)
+- note (string)
+- room (string)
+- status (string) e.g. "Open" or "Closed"
+- priority (string)
+- assigned (string)
+- createdAt (timestamp) - use serverTimestamp when adding
 
-If you want, I can walk you through **every step live** and provide screenshots. Tell me when you're ready.
+## Deploying to Vercel
+1. Push this folder to a GitHub repo.
+2. On Vercel, click New Project → Import Git Repository → pick your repo → Deploy.
+
+If you want, I can walk you through pushing to GitHub step-by-step.

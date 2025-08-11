@@ -5,7 +5,7 @@ export default function Header() {
         <div className="w-10 h-10 bg-brand text-white flex items-center justify-center font-bold rounded-md">GS</div>
         <div>
           <div className="text-lg font-semibold">GuestSync Dashboard</div>
-          <div className="text-xs text-gray-500">Hotel request management — management view</div>
+          <div className="text-xs text-gray-500">Real-time management view</div>
         </div>
       </div>
       <div className="flex items-center gap-4">
